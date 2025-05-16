@@ -1,7 +1,13 @@
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
+        maven {
+            url 'https://dl.bintray.com/realm/maven/'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/public/'
+        }
     }
     dependencies {
         classpath 'io.realm:realm-gradle-plugin:3.7.2'
@@ -97,4 +103,7 @@ dependencies {
     implementation 'com.facebook.stetho:stetho:1.5.0'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.2'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation "io.realm:realm-annotations:3.7.2"
+    annotationProcessor "io.realm:realm-annotations-processor:3.7.2"
+    implementation "io.realm:realm-android-library:3.7.2"
 }

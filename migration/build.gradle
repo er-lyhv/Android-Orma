@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'com.github.dcendents.android-maven'
 
 android {
     compileSdkVersion SDK_VERSION
@@ -96,6 +96,6 @@ dependencies {
     androidTestImplementation 'org.hamcrest:hamcrest-library:1.3'
 }
 
-archivesBaseName = 'orma-migration'
-metadata.desc = 'A smart SQLiteDatabase migration engine'
-apply from: "${project.rootDir}/publish.gradle"
+//archivesBaseName = 'orma-migration'
+//metadata.desc = 'A smart SQLiteDatabase migration engine'
+//apply from: "${project.rootDir}/publish.gradle"
