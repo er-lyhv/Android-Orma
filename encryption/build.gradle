@@ -39,12 +39,14 @@ android {
 
 dependencies {
     api project(':core')
+    api project(':android-database-sqlcipher')
+
 
     api "androidx.annotation:annotation:${ANDROIDX_ANNOTATION_VERSION}"
 
     // https://github.com/sqlcipher/android-database-sqlcipher
    // implementation 'net.zetetic:sqlcipher-android:4.7.2'
-    implementation 'net.zetetic:android-database-sqlcipher:4.5.4'
+   // implementation 'net.zetetic:android-database-sqlcipher:4.5.4'
 }
 //archivesBaseName = 'orma-encryption'
 //metadata.desc = 'Encryption support for Android-Orma'

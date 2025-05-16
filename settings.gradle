@@ -1,1 +1,1 @@
-include ':annotations', ':processor', ':migration', ':library', ':example', ':encryption', ':core'
+include ':annotations', ':processor', ':migration', ':library', ':example', ':encryption', ':core' , ':android-database-sqlcipher'
