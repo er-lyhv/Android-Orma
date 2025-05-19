@@ -40,7 +40,7 @@ android {
 dependencies {
     api project(':core')
     api project(':android-database-sqlcipher')
-
+    implementation "androidx.sqlite:sqlite:2.2.0"
 
     api "androidx.annotation:annotation:${ANDROIDX_ANNOTATION_VERSION}"
 
