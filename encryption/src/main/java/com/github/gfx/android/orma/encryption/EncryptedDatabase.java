@@ -20,8 +20,9 @@ import com.github.gfx.android.orma.core.Database;
 import com.github.gfx.android.orma.core.DatabaseProvider;
 import com.github.gfx.android.orma.core.DatabaseStatement;
 
-import net.sqlcipher.DatabaseUtils;
-import net.sqlcipher.database.SQLiteDatabase;
+
+import net.zetetic.database.DatabaseUtils;
+import net.zetetic.database.sqlcipher.SQLiteDatabase;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -165,16 +166,16 @@ public class EncryptedDatabase implements Database {
         @NonNull
         @Override
         public Database provideOnDiskDatabase(@NonNull Context context, @NonNull String name, int mode) {
-            SQLiteDatabase.loadLibs(context);
+            System.loadLibrary("sqlcipher");
             File path = context.getDatabasePath(name);
-            return new EncryptedDatabase(SQLiteDatabase.openOrCreateDatabase(path, password, null));
+            return new EncryptedDatabase(SQLiteDatabase.openOrCreateDatabase(path, password, null,null));
         }
 
         @NonNull
         @Override
         public Database provideOnMemoryDatabase(@NonNull Context context) {
-            SQLiteDatabase.loadLibs(context);
-            return new EncryptedDatabase(SQLiteDatabase.create(null, password));
+            System.loadLibrary("sqlcipher");
+            return new EncryptedDatabase(SQLiteDatabase.create(null));
         }
     }
 }
