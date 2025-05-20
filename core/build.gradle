@@ -15,7 +15,7 @@
  */
 
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'com.github.dcendents.android-maven'
 
 android {
     compileSdkVersion SDK_VERSION
@@ -47,6 +47,6 @@ dependencies {
     api "androidx.annotation:annotation:${ANDROIDX_ANNOTATION_VERSION}"
 }
 
-archivesBaseName = 'orma-core'
-metadata.desc = 'The core module for Android-Orma'
-apply from: "${project.rootDir}/publish.gradle"
+//archivesBaseName = 'orma-core'
+//metadata.desc = 'The core module for Android-Orma'
+//apply from: "${project.rootDir}/publish.gradle"
