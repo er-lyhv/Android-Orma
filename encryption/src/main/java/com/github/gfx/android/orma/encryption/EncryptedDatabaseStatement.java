@@ -18,7 +18,8 @@ package com.github.gfx.android.orma.encryption;
 
 import com.github.gfx.android.orma.core.DatabaseStatement;
 
-import net.sqlcipher.database.SQLiteStatement;
+import net.zetetic.database.sqlcipher.SQLiteStatement;
+
 
 class EncryptedDatabaseStatement implements DatabaseStatement {
 

@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'com.github.dcendents.android-maven'
 
 android {
     compileSdkVersion SDK_VERSION
@@ -43,7 +43,9 @@ dependencies {
     api "androidx.annotation:annotation:${ANDROIDX_ANNOTATION_VERSION}"
 
     // https://github.com/sqlcipher/android-database-sqlcipher
-    implementation 'net.zetetic:android-database-sqlcipher:4.3.0'
+    implementation 'androidx.sqlite:sqlite:2.2.0'
+   // implementation 'net.zetetic:android-database-sqlcipher:4.5.4'
+    implementation 'net.zetetic:sqlcipher-android:4.7.2@aar'
 }
 
 archivesBaseName = 'orma-encryption'

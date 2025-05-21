@@ -15,8 +15,8 @@ final ANDROID_SDK_PATH = {
 }()
 
 ext {
-    MIN_SDK_VERSION = 16
-    SDK_VERSION = 28
+    MIN_SDK_VERSION = 21
+    SDK_VERSION = 31
     BUILD_TOOLS_VERSION = '28.0.3'
     ANDROIDX_CORE_VERSION = '1.0.0'
     ANDROIDX_ANNOTATION_VERSION = '1.0.0'
@@ -26,21 +26,51 @@ ext {
 }
 
 buildscript {
+    ext {
+        agp_version = '7.3.1'
+    }
     repositories {
         google()
-        jcenter()
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        maven { url 'https://repo.grails.org/grails/core/' }
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/snapshots/'
+        }
+        maven {
+            url 'https://dl.bintray.com/realm/maven/'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/public/'
+        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath "com.android.tools.build:gradle:$agp_version"
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+        classpath "gradle.plugin.org.ec4j.gradle:editorconfig-gradle-plugin:0.0.3"
+        //classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
     }
 }
 
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        maven { url 'https://repo.grails.org/grails/core/' }
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/snapshots/'
+        }
+        maven {
+            url 'https://dl.bintray.com/realm/maven/'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/public/'
+        }
     }
 
     gradle.projectsEvaluated {
@@ -118,7 +148,6 @@ class TimingsListener implements TaskExecutionListener, BuildListener {
         }
     }
 
-    @Override
     void buildStarted(Gradle gradle) {}
 
     @Override
